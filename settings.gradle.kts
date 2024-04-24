@@ -20,9 +20,9 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "compose"
-include(":app")
-include(":composearticle")
-include(":taskcompleted")
-include(":composequadrant")
-include(":diceroller")
-include(":tipcalculator")
+include(":unit1-birthday")
+include(":unit2-composearticle")
+include(":unit2-taskcompleted")
+include(":unit2-composequadrant")
+include(":unit2-diceroller")
+include(":unit2-tipcalculator")
