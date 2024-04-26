@@ -45,6 +45,7 @@ import com.chencye.demo.unit4_unscramble.R
 import com.chencye.demo.unit4_unscramble.ui.theme.UnscrambleTheme
 
 @Composable
+// 使用viewModel()，而不是DessertClickerViewModel()，不然旋转屏幕数据会被清掉
 fun GameScreen(gameViewModel: GameViewModel = viewModel()) {
     val gameUiState by gameViewModel.uiState.collectAsState()
     val mediumPadding = dimensionResource(R.dimen.padding_medium)

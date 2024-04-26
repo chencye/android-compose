@@ -1,5 +1,6 @@
-package com.chencye.demo.unit4_dessert_clicker
+package com.chencye.demo.unit4_dessert_clicker.data
 
+import com.chencye.demo.unit4_dessert_clicker.R
 import com.chencye.demo.unit4_dessert_clicker.model.Dessert
 
 object Datasource {
