@@ -1,4 +1,4 @@
-[TOC]
+[__TOC__]
 
 Android Basics with Compose
 <https://developer.android.com/courses/android-basics-compose/course>
@@ -160,4 +160,16 @@ onPause() 中运行的任何代码都会阻止其他内容的显示，因此请�
 
 ## [unit4-unscramble](unit4-unscramble) ViewModel
 
+- MutableStateFlow
+- Unidirectional data flow 单向数据流 (UDF)
+
+UDF 模式
+- `ViewModel` 保存并公开 UI 使用的状态。
+- UI 状态是由 `ViewModel` 转换的应用程序数据。
+- UI 通知 `ViewModel` 用户事件。
+- `ViewModel` 处理用户操作并更新状态。
+- 更新后的状态会反馈到 UI 进行渲染。
+- 对于任何导致状态突变的事件都会重复此过程。
+
+![](https://developer.android.com/static/codelabs/basic-android-kotlin-compose-viewmodel-and-state/img/af3b1fed1f840c63_856.png)
 
