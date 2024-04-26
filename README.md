@@ -171,3 +171,13 @@ UDF 模式
 
 ![](https://developer.android.com/static/codelabs/basic-android-kotlin-compose-viewmodel-and-state/img/af3b1fed1f840c63_856.png)
 
+## [unit4-cupcake](unit4-cupcake) Navigate between screens with Compose
+
+<https://developer.android.com/codelabs/basic-android-kotlin-compose-navigation>
+
+- NavHost 
+- NavHostController
+- back stack
+- share data with another app
+- Customize the AppBar, including the title and back button
+
