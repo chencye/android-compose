@@ -13,6 +13,7 @@ navigationCompose = "2.7.4"
 navigationTesting = "2.6.0"
 testEspressoIntents = "3.5.1"
 testExtJunit = "1.1.5"
+retrofit2 = "2.9.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -34,6 +35,8 @@ androidx-navigation-compose = { group = "androidx.navigation", name = "navigatio
 androidx-navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "navigationTesting" }
 androidx-test-espresso-intents = { group = "androidx.test.espresso", name = "espresso-intents", version.ref = "testEspressoIntents" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "testExtJunit" }
+retrofit2 = {group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit2"}
+retrofit2-converter-scalars = {group = "com.squareup.retrofit2", name = "converter-scalars", version.ref = "retrofit2"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
