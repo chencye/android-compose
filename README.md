@@ -208,3 +208,8 @@ from the internet using Retrofit. Then use the Coil library to display images in
 ## [unit5-mars-photos](unit5-mars-photos) Get data from the Internet
 
 ![](https://developer.android.com/static/codelabs/basic-android-kotlin-compose-getting-data-internet/img/3fe849669bd308da_856.png)
+
+- retrofit
+- by lazy
+- viewModelScope
+- INTERNET permission
