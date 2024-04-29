@@ -14,6 +14,10 @@ navigationTesting = "2.6.0"
 testEspressoIntents = "3.5.1"
 testExtJunit = "1.1.5"
 retrofit2 = "2.9.0"
+serialization = "1.9.10"
+serialization-json = "1.6.0"
+serialization-converter = "1.0.0"
+okhttp = "4.11.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -37,8 +41,12 @@ androidx-test-espresso-intents = { group = "androidx.test.espresso", name = "esp
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "testExtJunit" }
 retrofit2 = {group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit2"}
 retrofit2-converter-scalars = {group = "com.squareup.retrofit2", name = "converter-scalars", version.ref = "retrofit2"}
+kotlinx-serialization-json = {group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization-json"}
+retrofit2-converter-kotlinx = {group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "serialization-converter"}
+okhttp = {group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "serialization" }
 

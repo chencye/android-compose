@@ -21,16 +21,16 @@ import com.chencye.demo.unit5_mars_photos.ui.theme.MarsPhotosTheme
 
 @Composable
 fun HomeScreen(
-    marsUiState: MarsViewModel.MarsUiState,
+    marsUiState: MarsUiState,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(0.dp),
 ) {
     when (marsUiState) {
-        is MarsViewModel.MarsUiState.Loading -> LoadingScreen(modifier = modifier.fillMaxSize())
-        is MarsViewModel.MarsUiState.Success ->
+        is MarsUiState.Loading -> LoadingScreen(modifier = modifier.fillMaxSize())
+        is MarsUiState.Success ->
             ResultScreen(marsUiState, modifier.padding(top = contentPadding.calculateTopPadding()))
 
-        is MarsViewModel.MarsUiState.Error -> ErrorScreen(modifier = modifier.fillMaxSize())
+        is MarsUiState.Error -> ErrorScreen(modifier = modifier.fillMaxSize())
     }
 }
 
@@ -61,7 +61,7 @@ fun ErrorScreen(modifier: Modifier = Modifier) {
  * ResultScreen displaying number of photos retrieved.
  */
 @Composable
-fun ResultScreen(photos: MarsViewModel.MarsUiState, modifier: Modifier = Modifier) {
+fun ResultScreen(photos: MarsUiState, modifier: Modifier = Modifier) {
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier
@@ -74,6 +74,6 @@ fun ResultScreen(photos: MarsViewModel.MarsUiState, modifier: Modifier = Modifie
 @Composable
 fun ResultScreenPreview() {
     MarsPhotosTheme {
-        ResultScreen(MarsViewModel.MarsUiState.Success(stringResource(R.string.placeholder_result)))
+        ResultScreen(MarsUiState.Success(stringResource(R.string.placeholder_result)))
     }
 }
