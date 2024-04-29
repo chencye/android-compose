@@ -213,3 +213,4 @@ from the internet using Retrofit. Then use the Coil library to display images in
 - by lazy
 - viewModelScope
 - INTERNET permission
+- serialization
