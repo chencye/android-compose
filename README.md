@@ -203,4 +203,4 @@ from the internet using Retrofit. Then use the Coil library to display images in
 
 ![](https://developer.android.com/static/codelabs/basic-android-kotlin-compose-coroutines-android-studio/img/a3c314fb082a9626_856.png)
 
-
+![](https://developer.android.com/static/codelabs/basic-android-kotlin-compose-coroutines-android-studio/img/cf724160fd66ff21_856.png)
