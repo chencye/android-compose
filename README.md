@@ -218,3 +218,5 @@ from the internet using Retrofit. Then use the Coil library to display images in
 Dependency Injection
 ![](https://developer.android.com/static/codelabs/basic-android-kotlin-compose-add-repository/img/ff7a7cd039402747_856.png)
 
+- coroutines test
+- coil库
