@@ -229,3 +229,13 @@ Learn how to store data locally on the device and keep your apps working through
 - Use Preference DataStore to store user preferences.
 
 ## unit6-inventory-app
+
+# Unit 7: WorkManager
+Use Android Jetpack's WorkManager API to schedule necessary background work, such as data backups or fresh content downloads, that keeps running even if the app exits or the device restarts.
+- Define long running tasks that need to run in background work.
+- Add WorkManager to an Android app.
+- Create a Worker object and enqueue work.
+- Create constraints on WorkRequests.
+- Use the Background Task Inspector to inspect and debug WorkManager.
+
+## [unit7-workmanager](unit7-workmanager)
