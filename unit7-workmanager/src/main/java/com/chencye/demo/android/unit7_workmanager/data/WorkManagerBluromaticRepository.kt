@@ -19,9 +19,13 @@ package com.chencye.demo.android.unit7_workmanager.data
 import android.content.Context
 import android.net.Uri
 import androidx.work.Data
+import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkInfo
+import androidx.work.WorkManager
 import com.chencye.demo.android.unit7_workmanager.KEY_BLUR_LEVEL
 import com.chencye.demo.android.unit7_workmanager.KEY_IMAGE_URI
+import com.chencye.demo.android.unit7_workmanager.getImageUri
+import com.chencye.demo.android.unit7_workmanager.workers.BlurWorker
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 
@@ -29,11 +33,20 @@ class WorkManagerBluromaticRepository(context: Context) : BluromaticRepository {
 
     override val outputWorkInfo: Flow<WorkInfo?> = MutableStateFlow(null)
 
+    private var imageUri: Uri = context.getImageUri()
+    private val workManager = WorkManager.getInstance(context)
+
     /**
      * Create the WorkRequests to apply the blur and save the resulting image
      * @param blurLevel The amount to blur the image
      */
-    override fun applyBlur(blurLevel: Int) {}
+    override fun applyBlur(blurLevel: Int) {
+        // Create WorkRequest to blur the image
+        val blurBuilder = OneTimeWorkRequestBuilder<BlurWorker>()
+        blurBuilder.setInputData(createInputDataForWorkRequest(blurLevel, imageUri))
+        // Start the work
+        workManager.enqueue(blurBuilder.build())
+    }
 
     /**
      * Cancel any ongoing WorkRequests
