@@ -45,6 +45,11 @@ class BlurWorker(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx, 
                 val outputUri = writeBitmapToFile(applicationContext, output)
 
                 val outputData = workDataOf(KEY_IMAGE_URI to outputUri.toString())
+                makeStatusNotification(
+                    "Blur Output is $outputUri",
+                    applicationContext
+                )
+                delay(DELAY_TIME_MILLIS)
                 Result.success(outputData)
             } catch (throwable: Throwable) {
                 Log.e(

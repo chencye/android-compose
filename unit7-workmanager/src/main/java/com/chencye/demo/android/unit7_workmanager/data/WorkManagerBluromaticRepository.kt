@@ -19,6 +19,7 @@ package com.chencye.demo.android.unit7_workmanager.data
 import android.content.Context
 import android.net.Uri
 import androidx.work.Data
+import androidx.work.OneTimeWorkRequest
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
@@ -26,6 +27,8 @@ import com.chencye.demo.android.unit7_workmanager.KEY_BLUR_LEVEL
 import com.chencye.demo.android.unit7_workmanager.KEY_IMAGE_URI
 import com.chencye.demo.android.unit7_workmanager.getImageUri
 import com.chencye.demo.android.unit7_workmanager.workers.BlurWorker
+import com.chencye.demo.android.unit7_workmanager.workers.CleanupWorker
+import com.chencye.demo.android.unit7_workmanager.workers.SaveImageToFileWorker
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 
@@ -41,11 +44,21 @@ class WorkManagerBluromaticRepository(context: Context) : BluromaticRepository {
      * @param blurLevel The amount to blur the image
      */
     override fun applyBlur(blurLevel: Int) {
+        // Add WorkRequest to Cleanup temporary images
+        var continuation = workManager.beginWith(OneTimeWorkRequest.from(CleanupWorker::class.java))
+
         // Create WorkRequest to blur the image
         val blurBuilder = OneTimeWorkRequestBuilder<BlurWorker>()
         blurBuilder.setInputData(createInputDataForWorkRequest(blurLevel, imageUri))
         // Start the work
-        workManager.enqueue(blurBuilder.build())
+        // workManager.enqueue(blurBuilder.build())
+
+        continuation = continuation.then(blurBuilder.build())
+        // Add WorkRequest to save the image to the filesystem
+        val save = OneTimeWorkRequestBuilder<SaveImageToFileWorker>().build()
+        continuation = continuation.then(save)
+        // Start the work
+        continuation.enqueue()
     }
 
     /**
