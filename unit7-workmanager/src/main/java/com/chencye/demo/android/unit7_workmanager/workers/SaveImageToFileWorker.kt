@@ -25,7 +25,7 @@ private const val TAG = "SaveImageToFileWorker"
 
 class SaveImageToFileWorker(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx, params) {
 
-    private val title = "Blurred Image"
+    private val title = "Blurred-Image-" + System.currentTimeMillis()
     private val dateFormatter = SimpleDateFormat(
         "yyyy.MM.dd 'at' HH:mm:ss z",
         Locale.getDefault()
@@ -53,9 +53,9 @@ class SaveImageToFileWorker(ctx: Context, params: WorkerParameters) : CoroutineW
                 )
                 if (!imageUrl.isNullOrEmpty()) {
                     val output = workDataOf(KEY_IMAGE_URI to imageUrl)
-
+                    val outputUri = output.getString(KEY_IMAGE_URI)
                     makeStatusNotification(
-                        "Save Output is $imageUrl",
+                        "Save Output is $outputUri",
                         applicationContext
                     )
                     Result.success(output)
