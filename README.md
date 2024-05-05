@@ -243,3 +243,12 @@ Use Android Jetpack's WorkManager API to schedule necessary background work, suc
 - Worker / CoroutineWorker ：Worker 是一个在后台线程上同步执行工作的类。由于我们对异步工作感兴趣，因此可以使用 CoroutineWorker，它与 Kotlin Coroutines 具有互操作性。
 - WorkRequest ：此类代表执行某些工作的请求。 WorkRequest 是您定义工作程序是否需要运行一次或定期运行的位置。
 - WorkManager ：此类实际上会安排您的 WorkRequest 并使其运行。它以分散系统资源负载的方式调度 WorkRequest ，同时遵守您指定的约束。
+
+# Unit 8: Views and Compose
+Learn how to use Compose and the older UI toolkit based on Views side-by-side in the same app. In this unit, you will learn interoperability APIs and best practices to add a new feature to an existing app in Views, use an existing library that uses Views, or use a UI component that is not yet available in Compose.
+- Understand the View-based UI toolkit and build app UI using XML.
+- Add a composable in an app built with Views.
+- Add Navigation component to the app and use it to navigate between fragments.
+- Use AndroidView to display views.
+- Add existing View-based UI components in a Compose app.
+
